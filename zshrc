@@ -1,20 +1,12 @@
 # Path to your oh-my-zsh configuration.
+export ZSH_CUSTOM="$HOME/.zsh_custom"
 export ZSH="$HOME/.oh-my-zsh"
-
 export ZSH_TMUX_AUTOSTART=true
-
-# Set to the name theme to load.
-# Look in ~/.oh-my-zsh/themes/
 export ZSH_THEME="digitaltoad"
 export EDITOR="vi"
 export ARCHFLAGS='-arch x86_64'
-plugins=(tmux vi-mode brew npm rails rails3 rvm ssh-agent digicustom)
 
-# Set to this to use case-sensitive completion
-# export CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# export DISABLE_AUTO_UPDATE="true"
+plugins=(tmux vi-mode brew npm mix-fast rake-fast rails rvm ssh-agent projects)
 
 # Uncomment following line if you want to disable colors in ls
 export DISABLE_LS_COLORS="true"
@@ -42,14 +34,16 @@ export MAVEN_OPTS="-Xmx512m"
 export PGDATA="/usr/local/var/postgres"
 export PGDATABASE="postgres"
 
-# Company
-export COMPANY="Egon Machine"
-
 # RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+  source "$HOME/.rvm/scripts/rvm"
+  export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+fi
 
 # NVIM
 export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+if command -v direnv >/dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
+fi
