@@ -50,6 +50,7 @@ NeoBundle 'mhinz/vim-startify'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'xsbeats/vim-blade'
 NeoBundle 'godlygeek/tabular'
+NeoBundle 'keith/swift.vim'
 NeoBundle 'Valloric/YouCompleteMe', {
      \ 'build' : {
      \     'mac' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
