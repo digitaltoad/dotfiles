@@ -14,7 +14,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
 NeoBundle 'mileszs/ack.vim'
-NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'Kris2k/matchit'
@@ -51,14 +51,17 @@ NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'xsbeats/vim-blade'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'keith/swift.vim'
+NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'Valloric/YouCompleteMe', {
-     \ 'build' : {
-     \     'mac' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'unix' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
-     \    }
+     \ 'build'      : {
+        \ 'mac'     : './install.py',
+        \ 'unix'    : './install.py',
+        \ 'windows' : 'install.py',
+        \ 'cygwin'  : './install.py'
+        \ }
      \ }
+
+let g:neobundle#install_process_timeout = 1500
 
 call neobundle#end()
 
@@ -89,6 +92,7 @@ syntax on
 set nohlsearch
 syntax sync minlines=256
 let g:airline_theme='hybridline'
+let airline#extensions#default#section_use_groupitems = 0
 colorscheme hybrid
 set background=dark
 
@@ -113,6 +117,7 @@ augroup filetypedetect
   au BufRead,BufNewFile *           set expandtab tabstop=2 shiftwidth=2
   au BufRead,BufNewFile *.html      set expandtab tabstop=2 shiftwidth=2
   au BufRead,BufNewFile *.php       set filetype=php tabstop=4 shiftwidth=4 "noexpandtab
+  au BufRead,BufNewFile *.swift     set filetype=swift tabstop=4 shiftwidth=4 "noexpandtab
   au BufRead,BufNewFile *.blade.php set filetype=blade
   au BufRead,BufNewFile *.json      set filetype=json
   au BufRead,BufNewFile *.tmux.conf set filetype=tmux
@@ -169,7 +174,7 @@ nmap <leader>n :NERDTreeToggle <CR>
 let g:ctrlp_map = '<Leader>t'
 map <Leader>b :CtrlPBuffer<CR>
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|tmp|\.sass-cache|node_modules|vendor)$',
+  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|tmp|\.sass-cache|node_modules|vendor|_build|deps)$',
   \ 'file': '\v\.(pyc|DS_Store)$',
   \ }
 let g:ctrlp_match_window_reversed = 0

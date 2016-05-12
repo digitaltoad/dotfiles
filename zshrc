@@ -34,6 +34,9 @@ export MAVEN_OPTS="-Xmx512m"
 export PGDATA="/usr/local/var/postgres"
 export PGDATABASE="postgres"
 
+# swiftenv
+eval "$(swiftenv init -)"
+
 # RVM
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
   source "$HOME/.rvm/scripts/rvm"
