@@ -1,75 +1,59 @@
-if has('vim_starting')
-  " Required:
-  set runtimepath+=~/.config/nvim/bundle/neobundle.vim/
+set runtimepath^=~/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin(expand('~/.config/nvim/bundle/'))
+
+call dein#add('Shougo/dein.vim')
+call dein#add('mileszs/ack.vim')
+call dein#add('ctrlpvim/ctrlp.vim')
+call dein#add('mattn/emmet-vim')
+call dein#add('othree/html5.vim')
+call dein#add('Kris2k/matchit')
+call dein#add('scrooloose/nerdtree')
+call dein#add('scrooloose/syntastic')
+call dein#add('vim-scripts/tComment')
+call dein#add('godlygeek/tabular')
+call dein#add('vim-airline/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
+call dein#add('guns/vim-clojure-static')
+call dein#add('Lokaltog/vim-easymotion')
+call dein#add('elixir-lang/vim-elixir')
+call dein#add('tpope/vim-endwise')
+call dein#add('tpope/vim-fireplace')
+call dein#add('tpope/vim-fugitive')
+call dein#add('tpope/vim-git')
+call dein#add('fatih/vim-go')
+call dein#add('mustache/vim-mustache-handlebars')
+call dein#add('digitaltoad/vim-jade')
+call dein#add('pangloss/vim-javascript')
+call dein#add('mxw/vim-jsx')
+call dein#add('groenewege/vim-less')
+call dein#add('tpope/vim-rails')
+call dein#add('thoughtbot/vim-rspec')
+call dein#add('vim-ruby/vim-ruby')
+call dein#add('tpope/vim-surround')
+call dein#add('christoomey/vim-tmux-navigator')
+call dein#add('w0ng/vim-hybrid')
+call dein#add('othree/yajs.vim')
+call dein#add('nathanaelkane/vim-indent-guides')
+call dein#add('mhinz/vim-startify')
+call dein#add('jiangmiao/auto-pairs')
+call dein#add('xsbeats/vim-blade')
+call dein#add('godlygeek/tabular')
+call dein#add('keith/swift.vim')
+call dein#add('tpope/vim-dispatch')
+call dein#add('jdkanani/vim-material-theme')
+call dein#add('ElmCast/elm-vim')
+
+call dein#end()
+ 
+if dein#check_install()
+  call dein#install()
 endif
-
-" Required:
-call neobundle#begin(expand('~/.config/nvim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
-NeoBundle 'mileszs/ack.vim'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'othree/html5.vim'
-NeoBundle 'Kris2k/matchit'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'vim-scripts/tComment'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'guns/vim-clojure-static'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'elixir-lang/vim-elixir'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tpope/vim-fireplace'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-git'
-NeoBundle 'fatih/vim-go'
-NeoBundle 'mustache/vim-mustache-handlebars'
-NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'mxw/vim-jsx'
-NeoBundle 'groenewege/vim-less'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'thoughtbot/vim-rspec'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'christoomey/vim-tmux-navigator'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'othree/yajs.vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'mhinz/vim-startify'
-NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'xsbeats/vim-blade'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'keith/swift.vim'
-NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'Valloric/YouCompleteMe', {
-     \ 'build'      : {
-        \ 'mac'     : './install.py',
-        \ 'unix'    : './install.py',
-        \ 'windows' : 'install.py',
-        \ 'cygwin'  : './install.py'
-        \ }
-     \ }
-
-let g:neobundle#install_process_timeout = 1500
-
-call neobundle#end()
 
 " Required:
 filetype plugin indent on
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -90,9 +74,10 @@ set clipboard+=unnamedplus
 syntax on
 set nohlsearch
 syntax sync minlines=256
-let g:airline_theme='hybridline'
+let g:airline_theme='hybrid'
 let airline#extensions#default#section_use_groupitems = 0
-colorscheme hybrid
+" colorscheme hybrid
+colorscheme material-theme
 set background=dark
 
 " Display extra whitespace
@@ -115,6 +100,7 @@ au!
 augroup filetypedetect
   au BufRead,BufNewFile *           set expandtab tabstop=2 shiftwidth=2
   au BufRead,BufNewFile *.html      set expandtab tabstop=2 shiftwidth=2
+  au BufRead,BufNewFile *.elm       set tabstop=4 shiftwidth=4
   au BufRead,BufNewFile *.php       set filetype=php tabstop=4 shiftwidth=4 "noexpandtab
   au BufRead,BufNewFile *.swift     set filetype=swift tabstop=4 shiftwidth=4 "noexpandtab
   au BufRead,BufNewFile *.blade.php set filetype=blade
@@ -180,7 +166,7 @@ let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_show_hidden = 1
 
 " Prettify JSON
-map <leader>jt  <Esc>:%!python -mjson.tool<CR>
+map <leader>jt  <Esc>:%!python -m json.tool<CR>
 
 " syntastic
 let g:syntastic_enable_signs=1
@@ -219,8 +205,8 @@ let g:jsx_ext_required = 0
 " Indent Guides
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
-hi IndentGuidesOdd  guibg='#1d1f21'
-hi IndentGuidesEven guibg='#222427'
+"hi IndentGuidesOdd  guibg='#1d1f21'
+"hi IndentGuidesEven guibg='#222427'
 
 " Startify
 autocmd User Startified set buftype=

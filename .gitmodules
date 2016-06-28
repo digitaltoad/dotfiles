@@ -1,9 +1,9 @@
-[submodule "nvim/bundle/neobundle.vim"]
-	path = nvim/bundle/neobundle.vim
-	url = https://github.com/Shougo/neobundle.vim
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "nvim/bundle/repos/github.com/Shougo/dein.vim"]
+	path = nvim/bundle/repos/github.com/Shougo/dein.vim
+	url = https://github.com/Shougo/dein.vim.git
