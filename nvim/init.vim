@@ -1,55 +1,51 @@
-set runtimepath^=~/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
-
 " Required:
-call dein#begin(expand('~/.config/nvim/bundle/'))
+call plug#begin(expand('~/.config/nvim/bundle/'))
 
-call dein#add('Shougo/dein.vim')
-call dein#add('mileszs/ack.vim')
-call dein#add('ctrlpvim/ctrlp.vim')
-call dein#add('mattn/emmet-vim')
-call dein#add('othree/html5.vim')
-call dein#add('Kris2k/matchit')
-call dein#add('scrooloose/nerdtree')
-call dein#add('scrooloose/syntastic')
-call dein#add('vim-scripts/tComment')
-call dein#add('godlygeek/tabular')
-call dein#add('vim-airline/vim-airline')
-call dein#add('vim-airline/vim-airline-themes')
-call dein#add('guns/vim-clojure-static')
-call dein#add('Lokaltog/vim-easymotion')
-call dein#add('elixir-lang/vim-elixir')
-call dein#add('tpope/vim-endwise')
-call dein#add('tpope/vim-fireplace')
-call dein#add('tpope/vim-fugitive')
-call dein#add('tpope/vim-git')
-call dein#add('fatih/vim-go')
-call dein#add('mustache/vim-mustache-handlebars')
-call dein#add('digitaltoad/vim-jade')
-call dein#add('pangloss/vim-javascript')
-call dein#add('mxw/vim-jsx')
-call dein#add('groenewege/vim-less')
-call dein#add('tpope/vim-rails')
-call dein#add('thoughtbot/vim-rspec')
-call dein#add('vim-ruby/vim-ruby')
-call dein#add('tpope/vim-surround')
-call dein#add('christoomey/vim-tmux-navigator')
-call dein#add('w0ng/vim-hybrid')
-call dein#add('othree/yajs.vim')
-call dein#add('nathanaelkane/vim-indent-guides')
-call dein#add('mhinz/vim-startify')
-call dein#add('jiangmiao/auto-pairs')
-call dein#add('xsbeats/vim-blade')
-call dein#add('godlygeek/tabular')
-call dein#add('keith/swift.vim')
-call dein#add('tpope/vim-dispatch')
-call dein#add('jdkanani/vim-material-theme')
-call dein#add('ElmCast/elm-vim')
+Plug 'mileszs/ack.vim'
+Plug 'mattn/emmet-vim'
+Plug 'othree/html5.vim'
+Plug 'Kris2k/matchit'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'vim-scripts/tComment'
+Plug 'godlygeek/tabular'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'guns/vim-clojure-static'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'elixir-lang/vim-elixir'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'fatih/vim-go'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'digitaltoad/vim-jade'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'groenewege/vim-less'
+Plug 'tpope/vim-rails'
+Plug 'thoughtbot/vim-rspec'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-surround'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'othree/yajs.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'mhinz/vim-startify'
+Plug 'jiangmiao/auto-pairs'
+Plug 'xsbeats/vim-blade'
+Plug 'godlygeek/tabular'
+Plug 'keith/swift.vim'
+Plug 'tpope/vim-dispatch'
+Plug 'ElmCast/elm-vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ervandew/supertab'
+Plug 'w0ng/vim-hybrid'
+Plug 'sbdchd/airline-steve'
 
-call dein#end()
- 
-if dein#check_install()
-  call dein#install()
-endif
+call plug#end()
 
 " Required:
 filetype plugin indent on
@@ -71,13 +67,15 @@ set nocursorcolumn
 set clipboard+=unnamedplus
 
 " colors
+set termguicolors
 syntax on
 set nohlsearch
 syntax sync minlines=256
-let g:airline_theme='hybrid'
+let g:airline_theme='steve'
 let airline#extensions#default#section_use_groupitems = 0
-" colorscheme hybrid
-colorscheme material-theme
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 1
+colorscheme hybrid
 set background=dark
 
 " Display extra whitespace
@@ -155,18 +153,26 @@ imap <C-s> <esc>:w<CR>
 let NERDTreeIgnore=['\.rbc$', '\~$']
 nmap <leader>n :NERDTreeToggle <CR>
 
-" CtrlP
-let g:ctrlp_map = '<Leader>t'
-map <Leader>b :CtrlPBuffer<CR>
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|tmp|\.sass-cache|node_modules|vendor|_build|deps)$',
-  \ 'file': '\v\.(pyc|DS_Store)$',
-  \ }
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_show_hidden = 1
-
 " Prettify JSON
 map <leader>jt  <Esc>:%!python -m json.tool<CR>
+
+" FZF
+map <leader>t :Files<CR>
+map <leader>b :Buffers<CR>
+map <leader>s :Ag 
+
+let g:fzf_colors =
+\ { 'bg+':     ['bg', 'CursorLine', 'CursorColumn'] }
+
+function! s:fzf_statusline()
+  " Override statusline as you like
+  highlight fzf1 ctermfg=161 ctermbg=251
+  highlight fzf2 ctermfg=23 ctermbg=251
+  highlight fzf3 ctermfg=237 ctermbg=251
+  setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+endfunction
+
+autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
 " syntastic
 let g:syntastic_enable_signs=1
@@ -187,9 +193,6 @@ map <leader>gv :Gitv<CR>
 " Airline
 let g:airline_powerline_fonts=1
 
-" Custom color mappings
-hi CtrlPMatch ctermfg=None ctermbg=None
-
 " Tabularize
 nmap <Leader>a, :Tabularize /,\zs/l0l1<CR>
 nmap <Leader>a=> :Tabularize /=><CR>
@@ -207,6 +210,9 @@ let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 "hi IndentGuidesOdd  guibg='#1d1f21'
 "hi IndentGuidesEven guibg='#222427'
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
 
 " Startify
 autocmd User Startified set buftype=
