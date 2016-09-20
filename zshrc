@@ -40,10 +40,21 @@ if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
   export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 fi
 
+# KIEX
+[[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
+
 # NVIM
 export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
+# FZF
+export FZF_DEFAULT_OPTS='
+  --color fg:188,hl:103,fg+:222,bg+:235,hl+:104
+  --color info:183,prompt:110,spinner:107,pointer:167,marker:215
+'
+
 if command -v direnv >/dev/null 2>&1; then
   eval "$(direnv hook zsh)"
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
