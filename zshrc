@@ -57,4 +57,10 @@ if command -v direnv >/dev/null 2>&1; then
   eval "$(direnv hook zsh)"
 fi
 
+if command -v docker-machine >/dev/null 2>&1; then
+  eval "$(docker-machine env default)"
+fi
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore node_modules --ignore dist -g ""'
