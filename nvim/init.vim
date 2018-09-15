@@ -6,44 +6,48 @@ Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'
 Plug 'Kris2k/matchit'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+" Plug 'w0rp/ale'
 Plug 'vim-scripts/tComment'
 Plug 'godlygeek/tabular'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'guns/vim-clojure-static'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'elixir-lang/vim-elixir'
+Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
-Plug 'fatih/vim-go'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'digitaltoad/vim-jade'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'fatih/vim-go', { 'for': 'golang' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'groenewege/vim-less'
-Plug 'tpope/vim-rails'
-Plug 'thoughtbot/vim-rspec'
-Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'othree/yajs.vim'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'mhinz/vim-startify'
 Plug 'jiangmiao/auto-pairs'
-Plug 'xsbeats/vim-blade'
-Plug 'godlygeek/tabular'
-Plug 'keith/swift.vim'
-Plug 'tpope/vim-dispatch'
-Plug 'ElmCast/elm-vim'
+Plug 'xsbeats/vim-blade', { 'for': 'php' }
+Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'autozimu/LanguageClient-neovim', {
+      \ 'branch': 'next',
+      \ 'do': 'bash install.sh'
+      \ }
 Plug 'ervandew/supertab'
-Plug 'w0ng/vim-hybrid'
-Plug 'sbdchd/airline-steve'
+Plug 'mitsuse/autocomplete-swift', { 'for': 'swift' }
+Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript', 'typescript.tsx'] }
+Plug 'mhartington/nvim-typescript', {'do': './install.sh', 'for': ['typescript', 'typescript.tsx'] }
+Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'jparise/vim-graphql', { 'for': 'graphql' }
+Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
+Plug 'rakr/vim-one'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -70,12 +74,11 @@ set clipboard+=unnamedplus
 set termguicolors
 syntax on
 set nohlsearch
+set lazyredraw
 syntax sync minlines=256
-let g:airline_theme='steve'
+let g:airline_theme='onedark'
 let airline#extensions#default#section_use_groupitems = 0
-let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast = 1
-colorscheme hybrid
+colorscheme onedark
 set background=dark
 
 " Display extra whitespace
@@ -90,30 +93,26 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-" Put these in an autocmd group, so that we can delete them easily.
-augroup vimrcEx
-au!
-
 " Filetypes
 augroup filetypedetect
-  au BufRead,BufNewFile *           set expandtab tabstop=2 shiftwidth=2
-  au BufRead,BufNewFile *.html      set expandtab tabstop=2 shiftwidth=2
-  au BufRead,BufNewFile *.elm       set tabstop=4 shiftwidth=4
-  au BufRead,BufNewFile *.php       set filetype=php tabstop=4 shiftwidth=4 "noexpandtab
-  au BufRead,BufNewFile *.swift     set filetype=swift tabstop=4 shiftwidth=4 "noexpandtab
-  au BufRead,BufNewFile *.blade.php set filetype=blade
-  au BufRead,BufNewFile *.json      set filetype=json
-  au BufRead,BufNewFile *.tmux.conf set filetype=tmux
-  au BufRead,BufNewFile *.twig      set filetype=twig
-  au BufRead,BufNewFile *.hjs       set filetype=handlebars
-  au BufRead,BufNewFile *.hjs.erb   let b:eruby_subtype='handlebars'
-  au BufRead,BufNewFile *.hjs.erb   set filetype=eruby
-  au BufRead,BufNewFile *.hbs.erb   let b:eruby_subtype='handlebars'
-  au BufRead,BufNewFile *.hbs.erb   set filetype=eruby
-  au BufRead,BufNewFile *.rabl      set filetype=ruby
+  au BufEnter * call ncm2#enable_for_buffer()
+  au BufRead,BufNewFile *           setlocal expandtab tabstop=2 shiftwidth=2
+  au BufRead,BufNewFile *.html      setlocal expandtab tabstop=2 shiftwidth=2
+  au BufRead,BufNewFile *.php       setlocal filetype=php tabstop=4 shiftwidth=4 "noexpandtab
+  au BufRead,BufNewFile *.swift     setlocal filetype=swift tabstop=4 shiftwidth=4 "noexpandtab
+  au BufRead,BufNewFile *.leaf      setlocal filetype=html tabstop=4 shiftwidth=4 "noexpandtab
+  au BufRead,BufNewFile *.blade.php setlocal filetype=blade
+  au BufRead,BufNewFile *.json      setlocal filetype=json
+  au BufRead,BufNewFile *.tmux.conf setlocal filetype=tmux
+  au BufRead,BufNewFile *.twig      setlocal filetype=twig
+  au BufRead,BufNewFile *.rabl      setlocal filetype=ruby
   au BufRead,BufNewFile *.js.erb    let b:eruby_subtype='javascript'
-  au BufRead,BufNewFile *.js.erb    set filetype=eruby
-  au BufRead,BufNewFile *.go        set filetype=go tabstop=4 shiftwidth=4 noexpandtab
+  au BufRead,BufNewFile *.js.erb    setlocal filetype=eruby
+  au BufRead,BufNewFile *.go        setlocal filetype=go tabstop=4 shiftwidth=4 noexpandtab
+  au BufRead,BufNewFile *.rs        setlocal filetype=rust tabstop=4 shiftwidth=4
+  au BufRead,BufNewFile .envrc      setlocal filetype=zsh
+  au BufRead,BufNewFile Fastfile    setlocal filetype=ruby
+  au BufRead,BufNewFile Appfile     setlocal filetype=ruby
 augroup end
 
 " For all text files set 'textwidth' to 78 characters.
@@ -159,7 +158,7 @@ map <leader>jt  <Esc>:%!python -m json.tool<CR>
 " FZF
 map <leader>t :Files<CR>
 map <leader>b :Buffers<CR>
-map <leader>s :Ag 
+map <leader>s :Ag
 
 let g:fzf_colors =
 \ { 'bg+':     ['bg', 'CursorLine', 'CursorColumn'] }
@@ -174,15 +173,13 @@ endfunction
 
 autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
-" syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_messages = {'level': 'warnings'}
-let g:syntastic_auto_loc_list=2
-let g:syntastic_mode_map= { 'mode': 'active',
-                          \ 'active_filetypes': ['ruby', 'php', 'coffee', 'javascript'],
-                          \ 'passive_filetypes': ['html', 'scss'] }
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint_d'
+" ALE
+" let g:ale_completion_enabled = 0
+" let g:ale_linters = {
+"       \  'javascript': ['eslint'],
+"       \  'typescript': ['tslint']
+"       \}
+" let g:ale_linters_explicit = 1
 
 " Fugitive
 map <leader>gs :Gstatus<CR>
@@ -205,14 +202,19 @@ let g:go_auto_type_info = 0
 " JSX
 let g:jsx_ext_required = 0
 
-" Indent Guides
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_enable_on_vim_startup = 1
-"hi IndentGuidesOdd  guibg='#1d1f21'
-"hi IndentGuidesEven guibg='#222427'
+" ncm2
+set completeopt=noinsert,menuone,noselect
+let g:SuperTabDefaultCompletionType = "context"
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
+let g:LanguageClient_serverCommands = {
+      \ 'rust': ['rls']
+      \ }
+
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()
 
 " Startify
 autocmd User Startified set buftype=
