@@ -17,3 +17,6 @@ alias gcl='git clone'
 
 # Redis
 alias sred='/usr/local/bin/redis-server'
+
+# Emacs
+alias em='TERM=screen-24bit /usr/local/bin/emacs'
