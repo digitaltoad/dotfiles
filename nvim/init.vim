@@ -214,6 +214,7 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:LanguageClient_serverCommands = {
       \ 'rust': ['rustup', 'run', 'stable', 'rls'],
       \ 'crystal': ['scry']
+      \ 'python': ['pyls']
       \ }
 
 " Automatically start language servers.
@@ -305,7 +306,6 @@ call s:h("javascriptProp", { "fg": s:red })
 call s:h("javascriptObjectLabel", { "fg": s:red })
 call s:h("javascriptBrackets", { "fg": s:white })
 call s:h("javascriptFuncArg", { "fg": s:red })
-
 call s:h("typescriptImport", { "fg": s:purple })
 call s:h("typescriptIdentifierName", { "fg": s:red })
 call s:h("typescriptVariable", { "fg": s:purple })
@@ -349,6 +349,7 @@ call s:h("typescriptConstant", { "fg": s:yellow })
 
 call s:h("tsxTagName", { "fg": s:yellow })
 call s:h("tsxIntrinsicTagName", { "fg": s:yellow })
+call s:h("tsxTagName", { "fg": s:yellow })
 call s:h("tsxEscJs", { "fg": s:red })
 call s:h("tsxAttrib", { "fg": s:dark_yellow })
 call s:h("tsxCloseString", { "fg": s:yellow })

@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+function runDots() {
+  sudo -v
+
+  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+  for ARG in "$0"
+  do
+    if [ $ARG == "osxprep" ] || [ $ARG == "all" ]; then
+      echo ""
+      echo "----------------------------------------------------"
+      echo "Updating OSX and installing Xcode command line tools"
+      echo "----------------------------------------------------"
+      echo ""
+      ./osx.sh
+    fi
+    if [ $ARG == "homebrew" ] || [ $ARG == "all" ]; then
+      echo ""
+      echo "------------------------------------------------------------------------------------"
+      echo "Installing Homebrew along with some common formulae and apps."
+      echo "This might take a while to complete. some formulae need to be installed from source."
+      echo "------------------------------------------------------------------------------------"
+      echo ""
+      ./homebrew.sh
+    fi
+    if [ $ARG == "osx" ] || [ $ARG == "all" ]; then
+      echo ""
+      echo "------------------------------"
+      echo "Setting sensible OSX defaults."
+      echo "------------------------------"
+      echo ""
+      ./osx.sh
+    fi
+    if [ $ARG == "dotfiles" ] || [ $ARG == "all" ]; then
+      echo ""
+      echo "--------------------"
+      echo "Setting up dotfiles."
+      echo "--------------------"
+      echo ""
+      ./dotfiles.sh
+    fi
+  done
+
+  echo "-----------------------------------------------------------"
+  echo "Completed setup. Restart to ensure all updates take effect."
+  echo "-----------------------------------------------------------"
+}
+
+read -p "This script may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
+echo "";
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  runDots $@
+fi;
+
+unset runDots;

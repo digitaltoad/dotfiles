@@ -1,0 +1,52 @@
+- clean: ['~']
+
+- link:
+    ~/.config/nvim:
+      create: true
+      path: nvim
+      force: true
+    ~/.config/kitty:
+      path: kitty
+      force: true
+    ~/.nvimrc:
+      force: true
+      path: nvim/init.vim
+    ~/.zshrc:
+      force: true
+      path: zshrc
+    ~/.oh-my-zsh:
+      path: oh-my-zsh
+      force: true
+    ~/.zsh_custom:
+      force: true
+      path: zsh_custom
+    ~/.tmux.conf:
+      force: true
+      path: tmux.conf
+    ~/.chunkwmrc:
+      force: true
+      path: chunkwmrc
+    ~/.skhdrc:
+      force: true
+      path: skhdrc
+    ~/.vscode:
+      force: true
+      path: vscode
+    ~/screen-24bit.terminfo:
+      force: true
+      path: screen-24bit.terminfo
+    ~/.irbrc:
+      force: true
+      path: irbrc
+    ~/.ideavimrc:
+      force: true
+      path: ideavimrc
+    ~/.VSCodeVim:
+      force: true
+      path: VSCodeVim
+    ~/.fzf.zsh:
+      force: true
+      path: fzf.zsh
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

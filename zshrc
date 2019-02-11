@@ -1,7 +1,8 @@
+# export TERM=xterm-24bit
 # Path to your oh-my-zsh configuration.
 export ZSH_CUSTOM="$HOME/.zsh_custom"
 export ZSH="$HOME/.oh-my-zsh"
-export ZSH_TMUX_AUTOSTART=true
+# export ZSH_TMUX_AUTOSTART=true
 export ZSH_THEME="digitaltoad"
 export EDITOR="vi"
 export ARCHFLAGS='-arch x86_64'
@@ -9,7 +10,7 @@ export ARCHFLAGS='-arch x86_64'
 plugins=(tmux vi-mode brew npm mix-fast rake-fast rails rvm ssh-agent projects)
 
 # Uncomment following line if you want to disable colors in ls
-export DISABLE_LS_COLORS="true"
+# export DISABLE_LS_COLORS="true"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -20,7 +21,12 @@ export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.cabal/bin"
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
+export PATH="$PATH:$HOME/.local/bin"
 export PATH="$HOME/.nodenv/shims:$PATH"
+export PATH="$PATH:/usr/local/opt/flutter/bin"
+
+### PHP 7.1 first
+export PATH="/usr/local/opt/php@7.1/bin:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -57,9 +63,9 @@ if command -v direnv >/dev/null 2>&1; then
   eval "$(direnv hook zsh)"
 fi
 
-if command -v docker-machine >/dev/null 2>&1; then
-  eval "$(docker-machine env default)"
-fi
+# if command -v docker-machine >/dev/null 2>&1; then
+#   eval "$(docker-machine env default)"
+# fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

@@ -60,6 +60,12 @@ brew install rustup
 brew install heroku-toolbelt
 heroku update
 
+brew install nodenv
+brew install yarn
+
+brew install postgres
+brew install redis
+
 brew cask install --appdir="/Applications" alfred
 brew cask install --appdir="/Applications" kitty
 brew cask install --appdir="/Applications" visual-studio-code
