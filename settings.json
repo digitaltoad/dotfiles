@@ -1,0 +1,132 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2,
+    "editor.snippetSuggestions": "bottom",
+    "editor.renderIndentGuides": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.minimap.enabled": true,
+    "vim.handleKeys": {
+        "<C-d>": true
+    },
+    "vim.useCtrlKeys": true,
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [ "<C-d>"],
+            "after": ["<C-d>"]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "End"
+            ]
+        },
+        {
+            "before": [
+                "<leader>", "t"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before": [
+                "<leader>", "r", "s"
+            ],
+            "commands": [ "editor.action.rename" ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>", "e", "w"
+            ],
+            "commands": [
+                "editor.emmet.action.wrapWithAbbreviation"
+            ]
+        }
+    ],
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.leader": ",",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorCustomizations": {
+        "tab.activeBackground": "#282c34",
+        // "statusBar.background": "#005f5f",
+        // "statusBar.noFolderBackground": "#005f5f",
+        // "statusBar.debuggingBackground": "#005f5f"
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "comment, punctuation.definition.comment",
+                "settings": {
+                    "foreground": "#5C6370"
+                }
+            },
+            {
+                "scope": "comment.line.double-slash,comment.block.documentation",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            }
+        ]
+    },
+    "terminal.integrated.shell.osx": "/Users/joshuaborton/bin/vscode-shell",
+    // "terminal.integrated.shellArgs.osx": [
+    //     "--login"
+    // ],
+    "terminal.integrated.fontFamily": "Meslo LG M DZ for Powerline",
+    "window.zoomLevel": 0,
+    "typescript.check.npmIsInstalled": false,
+    "typescript.showUnused": false,
+    "explorer.confirmDragAndDrop": false,
+    "extensions.ignoreRecommendations": false,
+    "files.associations": {
+        "Fastfile": "ruby",
+        "Appfile": "ruby",
+        ".envrc": "shellscript"
+    },
+    "ruby.codeCompletion": false,
+    "ruby.format": "rubocop",
+    "ruby.lint": {
+        "rubocop": {
+            "lint": true
+        }
+    },
+    "[rust]": {
+        "editor.tabSize": 4
+    },
+    "[typescript]": {
+        "editor.tabSize": 4
+    },
+    "[typescriptreact]": {
+        "editor.tabSize": 4
+    },
+    "files.autoSave": "onFocusChange",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx",
+        "typescript": "jsx",
+        "typescriptreact": "jsx"
+    },
+    "auto-rename-tag.activationOnLanguage": [
+        "html",
+        "php",
+        "typescriptreact",
+        "javascriptreact"
+    ],
+    "java.configuration.checkProjectSettingsExclusions": false
+}
