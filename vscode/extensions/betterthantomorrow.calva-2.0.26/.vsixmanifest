@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Language="en-US" Id="calva" Version="2.0.26" Publisher="betterthantomorrow"/>
+    <DisplayName>Calva: Clojure &amp; Clojurescript Interactive Programming</DisplayName>
+    <Description xml:space="preserve">Integrated REPL, formatter, Paredit, and more. Powered by nREPL.</Description>
+    <Tags>Clojure,CLojureScript,Cider,REPL,Formatting,Pretty,EDN,Interactive Programming,keybindings,clojure,__ext_clj,__ext_cljs,__ext_cljc,__ext_cljx,__ext_clojure,__ext_edn,__ext_joke,__ext_boot</Tags>
+    <Categories>Programming Languages,Formatters,Linters,Other</Categories>
+    <GalleryFlags>Public</GalleryFlags>
+    <Badges><Badge Link="https://clojurians.slack.com/messages/calva-dev/" ImgUri="https://img.shields.io/badge/clojurians-calva--dev-blue.svg?logo=slack" Description="Let&#39;s talk in the #calva-dev channel at the Clojurians Slack" /></Badges>
+    <Properties>
+      <Property Id="Microsoft.VisualStudio.Code.Engine" Value="^1.30.0" />
+      <Property Id="Microsoft.VisualStudio.Code.ExtensionDependencies" Value="" />
+      <Property Id="Microsoft.VisualStudio.Code.ExtensionPack" Value="tonsky.clojure-warrior" />
+      <Property Id="Microsoft.VisualStudio.Code.LocalizedLanguages" Value="" />
+      
+        <Property Id="Microsoft.VisualStudio.Services.Links.Source" Value="https://github.com/BetterThanTomorrow/calva.git" />
+        <Property Id="Microsoft.VisualStudio.Services.Links.Getstarted" Value="https://github.com/BetterThanTomorrow/calva.git" />
+        
+          <Property Id="Microsoft.VisualStudio.Services.Links.GitHub" Value="https://github.com/BetterThanTomorrow/calva.git" />
+        
+      
+      
+      
+      <Property Id="Microsoft.VisualStudio.Services.Branding.Color" Value="#EFEFEF" />
+      <Property Id="Microsoft.VisualStudio.Services.Branding.Theme" Value="light" />
+      <Property Id="Microsoft.VisualStudio.Services.GitHubFlavoredMarkdown" Value="true" />
+      
+      
+    </Properties>
+    
+    <Icon>extension/assets/calva.png</Icon>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Code"/>
+  </Installation>
+  <Dependencies/>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.Code.Manifest" Path="extension/package.json" Addressable="true" />
+    <Asset Type="Microsoft.VisualStudio.Services.Content.Details" Path="extension/README.md" Addressable="true" /><Asset Type="Microsoft.VisualStudio.Services.Content.Changelog" Path="extension/CHANGELOG.md" Addressable="true" /><Asset Type="Microsoft.VisualStudio.Services.Icons.Default" Path="extension/assets/calva.png" Addressable="true" />
+  </Assets>
+</PackageManifest>

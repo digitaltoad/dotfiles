@@ -213,7 +213,7 @@ let g:SuperTabDefaultCompletionType = "context"
 
 let g:LanguageClient_serverCommands = {
       \ 'rust': ['rustup', 'run', 'stable', 'rls'],
-      \ 'crystal': ['scry']
+      \ 'crystal': ['scry'],
       \ 'python': ['pyls']
       \ }
 

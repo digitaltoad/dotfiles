@@ -8,7 +8,7 @@ alt - p : chunkc tiling::window --toggle split
 
 # change layout of desktop
 alt - e : chunkc tiling::desktop --layout bsp
-alt - s : chunkc tiling::desktop --layout monocle
+alt - s : chunkc tiling::desktop --layout float
 
 # kill focused window
 shift + alt - q : chunkc tiling::window --close
@@ -27,6 +27,11 @@ shift + alt - h : chunkc tiling::window --warp west
 shift + alt - j : chunkc tiling::window --warp south
 shift + alt - k : chunkc tiling::window --warp north
 shift + alt - l : chunkc tiling::window --warp east
+
+shift + alt + ctrl - h : chunkc tiling::window --swap west
+shift + alt + ctrl - j : chunkc tiling::window --swap south
+shift + alt + ctrl - k : chunkc tiling::window --swap north
+shift + alt + ctrl - l : chunkc tiling::window --swap east
 
 alt - r : chunkc tiling::desktop --rotate 90
 

@@ -2,7 +2,7 @@
 # Path to your oh-my-zsh configuration.
 export ZSH_CUSTOM="$HOME/.zsh_custom"
 export ZSH="$HOME/.oh-my-zsh"
-# export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOSTART=true
 export ZSH_THEME="digitaltoad"
 export EDITOR="vi"
 export ARCHFLAGS='-arch x86_64'
@@ -24,6 +24,7 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$HOME/.nodenv/shims:$PATH"
 export PATH="$PATH:/usr/local/opt/flutter/bin"
+export PATH="$HOME/.rbenv/shims:$PATH"
 
 ### PHP 7.1 first
 export PATH="/usr/local/opt/php@7.1/bin:$PATH"
@@ -39,12 +40,6 @@ export MAVEN_OPTS="-Xmx512m"
 # PSQL
 export PGDATA="/usr/local/var/postgres"
 export PGDATABASE="postgres"
-
-# RVM
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
-  source "$HOME/.rvm/scripts/rvm"
-  export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-fi
 
 # KIEX
 [[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"

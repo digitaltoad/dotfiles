@@ -47,6 +47,18 @@
     ~/.fzf.zsh:
       force: true
       path: fzf.zsh
+    ~/bin/vscode-shell:
+      create: true
+      force: true
+      path: vscode-shell
+    ~/bin/do_not_update_spotify:
+      create: true
+      force: true
+      path: do_not_update_spotify
+    ~/bin/forward:
+      create: true
+      force: true
+      path: forward
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
