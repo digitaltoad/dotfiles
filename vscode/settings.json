@@ -1,0 +1,391 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2,
+    "editor.snippetSuggestions": "bottom",
+    "editor.renderIndentGuides": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.minimap.enabled": true,
+    "editor.scrollBeyondLastLine": false,
+    "vim.handleKeys": {
+        "<C-d>": true
+    },
+    "vim.useCtrlKeys": true,
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [ "<C-d>"],
+            "after": ["<C-d>"]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "End"
+            ]
+        },
+        {
+            "before": [
+                "<leader>", "<leader>"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before": [
+              "S"
+            ],
+            "after": [
+              "leader", "leader", "s"
+            ]
+        },
+        {
+            "before": [
+                "<leader>", "n", "t", "b"
+            ],
+            "commands": ["todo.toggleBox"]
+        },
+        {
+            "before": [
+                "<leader>", "n", "t", "d"
+            ],
+            "commands": ["todo.editorToggleDone"]
+        },
+        {
+            "before": [
+                "<leader>", "n", "t", "s"
+            ],
+            "commands": ["todo.editorToggleStart"]
+        },
+        {
+            "before": [
+                "<leader>", "n", "t", "c"
+            ],
+            "commands": ["todo.editorToggleCancelled"]
+        },
+        {
+            "before": [
+              "<leader>", "c", "t", "a"
+            ],
+            "commands": ["test-explorer.run-all"]
+        },
+        {
+            "before": [
+              "<leader>", "c", "t", "f"
+            ],
+            "commands": ["test-explorer.run-all"]
+        },
+        {
+            "before": [
+              "<leader>", "c", "t", "c"
+            ],
+            "commands": ["test-explorer.run-test-at-cursor"]
+        },
+        {
+            "before": [
+              "<leader>", "c", "W" 
+            ],
+            "commands": [
+              {
+                  "command": "ssmacro.replace",
+                  "args": {
+                      "info": "Strip empty lines",
+                      "find": "^(\\s)*$\\n",
+                      "replace": "",
+                      "all": true,
+                      "reg": true,
+                      "flag": "gm"
+                  }
+              }
+            ]
+        },
+        {
+            "before": [
+              "<leader>", "c", "f"
+            ],
+            "commands": ["editor.action.formatDocument"]
+        },
+        {
+            "before": [
+              "<leader>", "c", "d"
+            ],
+            "commands": [{
+              "command": "editor.action.revealDefinition",
+              "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+            }]
+        },
+        {
+            "before": [
+              "<leader>", "c", "r"
+            ],
+            "commands": [ "editor.action.goToReferences" ],
+            "when": "editorHasReferenceProvider && editorTextFocus && !isInEmbeddedEditor"
+        },
+        {
+            "before": [
+                "<leader>", "c", "R"
+            ],
+            "commands": [ "editor.action.rename" ]
+        },
+        {
+            "before": [
+                "<leader>", "g", "s"
+            ],
+            "commands": [ "git.stageSelectedRanges" ]
+        },
+        {
+            "before": [
+                "<leader>", "g", "S"
+            ],
+            "commands": [ "git.stage" ]
+        },
+        {
+            "before": [
+                "<leader>", "g", "c"
+            ],
+            "commands": [ "git.commitStaged" ]
+        },
+        {
+            "before": [
+                "<leader>", "g", "p"
+            ],
+            "commands": [ "git.pushTo" ]  
+        },
+        {
+            "before": [
+                "<leader>", "g", "h", "i"
+            ],
+            "commands": [ "issue.createIssue" ]  
+        },
+        {
+            "before": [
+              "<leader>", "b"
+            ],
+            "commands": ["workbench.action.navigateBack"]
+        },
+        {
+            "before": [
+              "<leader>", "<tab>", "."
+            ],
+            "commands": [{
+              "command": "vscodeWorkspaceSwitcher.openWorkspace"
+            }]
+        },
+        {
+            "before": [
+              "<leader>", "<tab>", "s"
+            ],
+            "commands": ["vscodeWorkspaceSwitcher.saveWorkspace"]
+        },
+        {
+            "before": [ "<leader>", "]", "c" ],
+            "commands": [ "editor.action.dirtydiff.next" ]
+        },
+        {
+            "before": [ "<leader>", "[", "c" ],
+            "commands": [ "editor.action.dirtydiff.previous" ]
+        },
+        {
+            "before": [ "<leader>", "]", "c" ],
+            "commands": [ "workbench.action.compareEditor.nextChange" ]
+        },
+        {
+            "before": [ "<leader>", "[", "c" ],
+            "commands": [ "workbench.action.compareEditor.previousChange" ]
+        },
+        {
+            "before": [ "<leader>", "b", "n" ],
+            "commands": [ "extension.simpleNewFile" ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>", "e", "w"
+            ],
+            "commands": [
+                "editor.emmet.action.wrapWithAbbreviation"
+            ]
+        },
+        {
+            "before": [
+                "<leader>", "e", "i"
+            ],
+            "commands": [
+                "editor.emmet.action.wrapIndividualLinesWithAbbreviation"
+            ]
+        },
+        {
+            "before": [
+                "<leader>", "g", "s"
+            ],
+            "commands": [ "git.stageSelectedRanges" ]
+        },
+    ],
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.leader": ",",
+    "vim.easymotion": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorCustomizations": {
+        "tab.activeBackground": "#282c34",
+        // "statusBar.background": "#005f5f",
+        // "statusBar.noFolderBackground": "#005f5f",
+        // "statusBar.debuggingBackground": "#005f5f"
+    },
+    "editor.tokenColorCustomizations": {
+        "[One Dark Pro]": {
+          "textMateRules": [
+            {
+              "name": "support.other.namespace.php",
+              "scope": [
+                "support.other.namespace.php"
+              ],
+              "settings": {
+                "foreground": "#E5C07B"
+              }
+            },
+            {
+              "name": "punctuation.section.embedded.begin.php",
+              "scope": [
+                "punctuation.section.embedded.begin.php",
+                "punctuation.section.embedded.end.php"
+              ],
+              "settings": {
+                "foreground": "#c678dd"  // or #e06c75
+              }
+            } 
+          ]
+        },
+        "textMateRules": [
+            {
+                "scope": "comment, punctuation.definition.comment",
+                "settings": {
+                    "foreground": "#5C6370"
+                }
+            },
+            {
+                "scope": "comment.line.double-slash,comment.block.documentation",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            }
+        ]
+    },
+    "terminal.integrated.shell.osx": "/Users/jborton/bin/vscode-shell",
+    "terminal.integrated.fontFamily": "Meslo LG M DZ for Powerline",
+    "explorer.confirmDragAndDrop": false,
+    "extensions.ignoreRecommendations": false,
+    "files.associations": {
+      "Fastfile": "ruby",
+      "Appfile": "ruby",
+      ".envrc": "shellscript",
+      ".env.*": "env"
+    },
+    "ruby.codeCompletion": false,
+    "ruby.format": "rubocop",
+    "ruby.lint": {
+        "rubocop": {
+            "lint": true
+        }
+    },
+    "[rust]": {
+        "editor.tabSize": 4
+    },
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+        "editor.tabSize": 4
+    },
+    "[blade]": {
+        "editor.tabSize": 4
+    },
+    "files.autoSave": "onFocusChange",
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/**": true,
+      "**/.hg/store/**": true
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx",
+        "typescript": "jsx",
+        "typescriptreact": "jsx"
+    },
+    "explorer.confirmDelete": false,
+    "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+    "php-cs-fixer.lastDownload": 1618899649551,
+    // "vetur.useWorkspaceDependencies": true,
+    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "vue"],
+    "prettier.tabWidth": 2,
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.detectIndentation": false,
+    "editor.minimap.maxColumn": 80,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "vscodeWorkspaceSwitcher.paths": [
+
+      "/Users/jborton/Projects/*",
+      "/Users/jborton/.workspaces"
+    ],
+    "remote.extensionKind": {
+      "ms-azuretools.vscode-docker": "workspace"
+    },
+    "sourcekit-lsp.serverPath": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp",
+    "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "colorize.colorized_variables": [
+      // "CSS",
+      // "SASS"
+    ],
+    "liveshare.audio.joinCallBehavior": "accept",
+    "liveshare.presence": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": true
+    },
+    "tailwindCSS.includeLanguages": {
+      "typescript": "javascript",
+      "typescriptreact": "javascript"
+    },
+    "tailwindCSS.experimental.classRegex": [
+      "tw`([^`]*)"
+    ],
+    "vscode-edge-devtools.enableNetwork": true,
+    "vscode-edge-devtools.headless": true,
+    "githubIssues.queries": [
+      {
+        "label": "My Issues",
+        "query": "default"
+      },
+      {
+        "label": "Created Issues",
+        "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+      }
+    ],
+    "crystal-lang.implementations": true,
+    "crystal-lang.completion": true,
+    "crystal-lang.server": "/usr/local/bin/crystalline",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+    "typescript.preferences.quoteStyle": "single",
+    "typescript.format.semicolons": "remove",
+    "javascript.format.semicolons": "remove",
+}

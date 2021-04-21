@@ -23,15 +23,12 @@
     ~/.tmux.conf:
       force: true
       path: tmux.conf
-    ~/.chunkwmrc:
+    ~/.yabairc:
       force: true
-      path: chunkwmrc
+      path: yabairc
     ~/.skhdrc:
       force: true
       path: skhdrc
-    ~/.vscode:
-      force: true
-      path: vscode
     ~/screen-24bit.terminfo:
       force: true
       path: screen-24bit.terminfo
@@ -41,16 +38,25 @@
     ~/.ideavimrc:
       force: true
       path: ideavimrc
-    ~/.VSCodeVim:
-      force: true
-      path: VSCodeVim
     ~/.fzf.zsh:
       force: true
       path: fzf.zsh
     ~/bin/vscode-shell:
       create: true
       force: true
-      path: vscode-shell
+      path: vscode/bin/shell
+    ~/Library/Application\ Support/Code/User/settings.json
+      create: true
+      force: true
+      path: vscode/settings.json
+    ~/Library/Application\ Support/Code/User/keybindings.json
+      create: true
+      force: true
+      path: vscode/keybindings.json
+    ~/Library/Application\ Support/Code/User/snippets
+      create: true
+      force: true
+      path: vscode/snippets
     ~/bin/do_not_update_spotify:
       create: true
       force: true
@@ -62,3 +68,4 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [cat vscode/extensions.list xargs -I % code --install-extensions %]

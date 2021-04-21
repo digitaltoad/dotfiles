@@ -1,0 +1,107 @@
+{
+	// Place your snippets for php here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+  "Open PHP class": {
+    "prefix": "cla",
+    "body": [
+      "namespace ${1:Namespace};",
+      "",
+      "class ${2:ClassName}",
+      "{",
+      "    public function __construct(${3:$params})",
+      "    {",
+      "        ${4:#constructor}",
+      "    }",
+      "}",
+      ""
+    ],
+    "description": "Start a new php class"
+  },
+
+  "Open public static function": {
+    "prefix": "spubfun",
+    "body": [
+      "public static function ${1:name}(${2:\\$params}): ${3:ReturnType}",
+      "{",
+      "    ${4:#body}",
+      "}"
+    ],
+    "description": "Open a public static function definition"
+  },
+
+  "Open public function": {
+    "prefix": "pubfun",
+    "body": [
+      "public function ${1:name}(${2:\\$params}): ${3:ReturnType}",
+      "{",
+      "    ${4:#body}",
+      "}"
+    ],
+    "description": "Open a public function definition"
+  },
+
+  "Open private function": {
+    "prefix": "prifun",
+    "body": [
+      "private function ${1:name}(${2:\\$params}): ${ReturnType}",
+      "{",
+      "    ${4:#body}",
+      "}"
+    ],
+    "description": "Open a private function definition"
+  },
+
+  "Open protected function": {
+    "prefix": "profun",
+    "body": [
+      "protected function ${1:name}(${2:\\$params}): ${3:ReturnType}",
+      "{",
+      "    ${4:#body}",
+      "}"
+    ],
+    "description": "Open a private function definition"
+  },
+
+  "Public static variable": {
+    "prefix": "spubvar",
+    "body": [
+      "public static ${1:Type} $${2:varname};",
+    ],
+    "description": "Open a public static variable definition"
+  },
+
+  "Public variable": {
+    "prefix": "pubvar",
+    "body": [
+      "public ${1:Type} $${2:varname};",
+    ],
+    "description": "Open a public variable definition"
+  },
+
+  "Private variable": {
+    "prefix": "privar",
+    "body": [
+      "private ${1:Type} $${2:varname};",
+    ],
+    "description": "Open a private variable definition"
+  },
+
+  "Protected variable": {
+    "prefix": "provar",
+    "body": [
+      "protected ${1:Type} $${2:varname};",
+    ],
+    "description": "Open a protected variable definition"
+  }
+}
