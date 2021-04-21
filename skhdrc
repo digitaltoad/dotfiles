@@ -15,8 +15,6 @@ shift + cmd - j : yabai -m window --swap south
 shift + cmd - k : yabai -m window --swap north
 shift + cmd - l : yabai -m window --swap east
 
-alt - r : chunkc tiling::desktop --rotate 90
-
 # move focused container to workspace
 shift + alt - 1 : yabai -m window --space 1
 shift + alt - 2 : yabai -m window --space 2
