@@ -45,15 +45,15 @@
       create: true
       force: true
       path: vscode/bin/shell
-    ~/Library/Application\ Support/Code/User/settings.json
+    ~/Library/Application\ Support/Code/User/settings.json:
       create: true
       force: true
       path: vscode/settings.json
-    ~/Library/Application\ Support/Code/User/keybindings.json
+    ~/Library/Application\ Support/Code/User/keybindings.json:
       create: true
       force: true
       path: vscode/keybindings.json
-    ~/Library/Application\ Support/Code/User/snippets
+    ~/Library/Application\ Support/Code/User/snippets:
       create: true
       force: true
       path: vscode/snippets
@@ -68,4 +68,4 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [cat vscode/extensions.list xargs -I % code --install-extensions %]
+  - [cat vscode/extensions.list | xargs -I % code --install-extension %, Installing extensions]
