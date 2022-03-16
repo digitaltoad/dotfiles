@@ -1,0 +1,18 @@
+{
+
+:layers {
+    :tab_mode {:key :tab}
+} ;; layers
+
+:main [
+    {:des "caps"
+     :rules [[:##caps_lock :left_control nil {:alone :escape}]]}
+    {:des "tab_mode"
+     :rules [:tab_mode
+             [:##h :left_arrow]
+             [:##j :down_arrow]
+             [:##k :up_arrow]
+             [:##l :right_arrow]]}
+] ;; main
+
+}
