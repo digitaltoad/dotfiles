@@ -1,4 +1,7 @@
 #!/bin/zsh
+# exa
+alias ll='exa -lh'
+
 # rubygems
 alias sgi='sudo gem install'
 alias sgid='sudo gem install'

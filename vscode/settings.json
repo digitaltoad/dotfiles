@@ -1,162 +1,222 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.formatOnSave": false,
-    "editor.tabSize": 2,
-    "editor.snippetSuggestions": "bottom",
-    "editor.renderIndentGuides": true,
-    "editor.renderWhitespace": "boundary",
-    "editor.minimap.enabled": true,
-    "editor.scrollBeyondLastLine": false,
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "One Dark Pro",
-    "workbench.colorCustomizations": {
-        "tab.activeBackground": "#282c34",
-        // "statusBar.background": "#005f5f",
-        // "statusBar.noFolderBackground": "#005f5f",
-        // "statusBar.debuggingBackground": "#005f5f"
-    },
-    "editor.tokenColorCustomizations": {
-        "[One Dark Pro]": {
-          "textMateRules": [
-            {
-              "name": "support.other.namespace.php",
-              "scope": [
-                "support.other.namespace.php"
-              ],
-              "settings": {
-                "foreground": "#E5C07B"
-              }
-            },
-            {
-              "name": "punctuation.section.embedded.begin.php",
-              "scope": [
-                "punctuation.section.embedded.begin.php",
-                "punctuation.section.embedded.end.php"
-              ],
-              "settings": {
-                "foreground": "#c678dd"  // or #e06c75
-              }
-            } 
-          ]
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "editor.formatOnSave": false,
+  "editor.tabSize": 2,
+  "editor.snippetSuggestions": "bottom",
+  "editor.renderIndentGuides": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.minimap.enabled": true,
+  "editor.scrollBeyondLastLine": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorCustomizations": {
+    "tab.activeBackground": "#282c34",
+    // "statusBar.background": "#005f5f",
+    // "statusBar.noFolderBackground": "#005f5f",
+    // "statusBar.debuggingBackground": "#005f5f"
+  },
+  "editor.tokenColorCustomizations": {
+    "[One Dark Pro]": {
+      "textMateRules": [
+        {
+          "name": "support.other.namespace.php",
+          "scope": [
+            "support.other.namespace.php"
+          ],
+          "settings": {
+            "foreground": "#E5C07B"
+          }
         },
-        "textMateRules": [
-            {
-                "scope": "comment, punctuation.definition.comment",
-                "settings": {
-                    "foreground": "#5C6370"
-                }
-            },
-            {
-                "scope": "comment.line.double-slash,comment.block.documentation",
-                "settings": {
-                    "fontStyle": "italic"
-                }
-            }
-        ]
-    },
-    "terminal.integrated.shell.osx": "/Users/jborton/bin/vscode-shell",
-    "terminal.integrated.fontFamily": "Meslo LG M DZ for Powerline",
-    "explorer.confirmDragAndDrop": false,
-    "extensions.ignoreRecommendations": false,
-    "files.associations": {
-      "Fastfile": "ruby",
-      "Appfile": "ruby",
-      ".envrc": "shellscript",
-      ".env.*": "env"
-    },
-    "ruby.codeCompletion": false,
-    "ruby.format": "rubocop",
-    "ruby.lint": {
-        "rubocop": {
-            "lint": true
+        {
+          "name": "punctuation.section.embedded.begin.php",
+          "scope": [
+            "punctuation.section.embedded.begin.php",
+            "punctuation.section.embedded.end.php"
+          ],
+          "settings": {
+            "foreground": "#c678dd" // or #e06c75
+          }
         }
+      ]
     },
-    "[rust]": {
-        "editor.tabSize": 4
-    },
-    "[php]": {
-        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
-        "editor.tabSize": 4
-    },
-    "[blade]": {
-        "editor.tabSize": 4
-    },
-    "files.autoSave": "onFocusChange",
-    "files.watcherExclude": {
-      "**/.git/objects/**": true,
-      "**/.git/subtree-cache/**": true,
-      "**/node_modules/**": true,
-      "**/.hg/store/**": true
-    },
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "emmet.syntaxProfiles": {
-        "javascript": "jsx",
-        "typescript": "jsx",
-        "typescriptreact": "jsx"
-    },
-    "explorer.confirmDelete": false,
-    "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-    "php-cs-fixer.lastDownload": 1618899649551,
-    // "vetur.useWorkspaceDependencies": true,
-    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "vue"],
-    "prettier.tabWidth": 2,
-    "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescriptreact]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.detectIndentation": false,
-    "editor.minimap.maxColumn": 80,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "vscodeWorkspaceSwitcher.paths": [
-
-      "/Users/jborton/Projects/*",
-      "/Users/jborton/.workspaces"
-    ],
-    "remote.extensionKind": {
-      "ms-azuretools.vscode-docker": "workspace"
-    },
-    "sourcekit-lsp.serverPath": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp",
-    "[html]": {
-      "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "colorize.colorized_variables": [
-      // "CSS",
-      // "SASS"
-    ],
-    "liveshare.audio.joinCallBehavior": "accept",
-    "liveshare.presence": true,
-    "editor.codeActionsOnSave": {
-      "source.fixAll.stylelint": true
-    },
-    "tailwindCSS.includeLanguages": {
-      "typescript": "javascript",
-      "typescriptreact": "javascript"
-    },
-    "tailwindCSS.experimental.classRegex": [
-      "tw`([^`]*)"
-    ],
-    "vscode-edge-devtools.enableNetwork": true,
-    "vscode-edge-devtools.headless": true,
-    "githubIssues.queries": [
+    "textMateRules": [
       {
-        "label": "My Issues",
-        "query": "default"
+        "scope": "comment, punctuation.definition.comment",
+        "settings": {
+          "foreground": "#5C6370"
+        }
       },
       {
-        "label": "Created Issues",
-        "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+        "scope": "comment.line.double-slash,comment.block.documentation",
+        "settings": {
+          "fontStyle": "italic"
+        }
       }
-    ],
-    "crystal-lang.implementations": true,
-    "crystal-lang.completion": true,
-    "crystal-lang.server": "/usr/local/bin/crystalline",
-    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-    "typescript.preferences.quoteStyle": "single",
-    "typescript.format.semicolons": "remove",
-    "javascript.format.semicolons": "remove",
+    ]
+  },
+  "terminal.integrated.profiles.osx": {
+    "ZSH Tmux (previous session)": {
+      "path": "/Users/jborton/bin/vscode-shell",
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "ZSH Tmux (previous session)",
+  "terminal.integrated.fontFamily": "Meslo LG M DZ for Powerline",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.commandsToSkipShell": [
+    "workbench.action.focusNextGroup",
+    "workbench.action.focusPreviousGroup"
+  ],
+  "explorer.confirmDragAndDrop": false,
+  "extensions.ignoreRecommendations": false,
+  "files.associations": {
+    "Fastfile": "ruby",
+    "Appfile": "ruby",
+    ".envrc": "shellscript",
+    ".env.*": "env"
+  },
+  "ruby.codeCompletion": false,
+  "ruby.format": "rubocop",
+  "ruby.lint": {
+    "rubocop": {
+      "lint": true
+    }
+  },
+  "files.autoSave": "onFocusChange",
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/.hg/store/**": true,
+    "dist/**": true
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+    "typescript": "jsx",
+    "typescriptreact": "jsx"
+  },
+  "explorer.confirmDelete": false,
+  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+  "php-cs-fixer.lastDownload": 1646957046388,
+  // "vetur.useWorkspaceDependencies": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "prettier.tabWidth": 2,
+  "editor.detectIndentation": false,
+  "editor.minimap.maxColumn": 80,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "vscodeWorkspaceSwitcher.paths": [
+    "/Users/jborton/Projects/*",
+    "/Users/jborton/.workspaces"
+  ],
+  "remote.extensionKind": {
+    "ms-azuretools.vscode-docker": "workspace"
+  },
+  "sourcekit-lsp.serverPath": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "colorize.colorized_variables": [
+    // "CSS",
+    // "SASS"
+  ],
+  "liveshare.audio.joinCallBehavior": "accept",
+  "liveshare.presence": true,
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "tw`([^`]*)", // tw`...`
+    "tw=\"([^\"]*)", // <div tw="..." />
+    "tw={\"([^\"}]*)", // <div tw={"..."} />
+    "tw\\.\\w+`([^`]*)", // tw.xxx`...`
+    "tw\\(.*?\\)`([^`]*)" // tw(Component)`...`
+  ],
+  "githubIssues.queries": [
+    {
+      "label": "My Issues",
+      "query": "default"
+    },
+    {
+      "label": "Created Issues",
+      "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+    }
+  ],
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+  "vscode-neovim.textDecorationsAtTop": true,
+  "vscode-neovim.highlightGroups.highlights": {
+    "Directory": "vim",
+    "IncSearch": {
+      "backgroundColor": "theme.editor.findMatchBackground",
+      "borderColor": "theme.editor.findMatchBorder"
+    },
+    "Search": {
+      "backgroundColor": "theme.editor.findMatchHighlightBackground",
+      "borderColor": "theme.editor.findMatchHighlightBorder"
+    },
+    "Visual": {
+      "backgroundColor": "theme.editor.selectionBackground"
+    },
+    "Conceal": "vim",
+    "Substitute": "vim",
+    "EasyMotionTarget": {
+      "color": "red",
+      "backgroundColor": "theme.editor.background"
+    },
+    "EasyMotionTarget2First": {
+      "color": "yellow",
+      "backgroundColor": "theme.editor.background"
+    },
+    "EasyMotionTarget2Second": {
+      "color": "yellow",
+      "backgroundColor": "theme.editor.background"
+    }
+  },
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.format.semicolons": "remove",
+  "javascript.format.semicolons": "remove",
+  "workbench.colorTheme": "One Dark Pro",
+  "extensions.supportVirtualWorkspaces": {
+    "octref.vetur": true
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "elixirLS.enableTestLenses": true,
+  "[rust]": {
+    "editor.tabSize": 4
+  },
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+    "editor.tabSize": 4
+  },
+  "[blade]": {
+    "editor.tabSize": 4
+  },
+  "[elixir]": {
+    "editor.formatOnSave": true,
+  },
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+    }
+  },
+  "[typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+    }
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  }
 }

@@ -18,20 +18,14 @@
       "import React from 'react'"
     ]
   },
-  "Import FunctionComponent": {
-    "prefix": "imf",
-    "body": [
-      "import type { FunctionComponent } from 'react'"
-    ]
-  },
   "Create full FunctionComponent boilerplate": {
-    "prefix": "funcomp",
+    "prefix": "rfc",
     "body": [
-      "interface Props {",
-      "  ${1:myProp}: ${2:string}",
-      "}",
+      "import React, { PropsWithChildren } from 'react'",
       "",
-      "export const ${3:MyComponent}: FunctionComponent<Props> = (props) => {",
+      "type Props = {}",
+      "",
+      "export function ${3:MyComponent}(props: PropsWithChildren<Props>) {",
       "  return (",
       "    <div>${4:Hello}</div>",
       "  )",

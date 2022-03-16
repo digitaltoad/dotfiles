@@ -1,3 +1,5 @@
+# cmd - return : open -a kitty.app
+
 # change focus
 alt - h : yabai -m window --focus west
 alt - j : yabai -m window --focus south
@@ -30,13 +32,13 @@ shift + alt - 0 : yabai -m window --space 10
 # adjust region size
 lctrl + alt - h : yabai -m window --resize left:-50:0; \
                   yabai -m window --resize right:-50:0
-                  
+
 lctrl + alt - j : yabai -m window --resize bottom:0:50; \
                   yabai -m window --resize top:0:50
-                  
+
 lctrl + alt - k : yabai -m window --resize top:0:-50; \
                   yabai -m window --resize bottom:0:-50
-                  
+
 lctrl + alt - l : yabai -m window --resize right:50:0; \
                   yabai -m window --resize left:50:0
 
@@ -55,6 +57,10 @@ ctrl - 9 : yabai -m space --focus 9
 ctrl - 0 : yabai -m space --focus 10
 
 alt - f : yabai -m window --toggle zoom-fullscreen
-alt - t : yabai -m window --toggle float
+alt - t : yabai -m window --toggle float;\
+          yabai -m window --grid 5:5:1:1:3:3
+alt - s : yabai -m window --toggle sticky;\
+          yabai -m window --grid 5:5:1:1:3:3
+alt - o : yabai -m window --toggle topmost
 alt - e : yabai -m window --toggle split
 

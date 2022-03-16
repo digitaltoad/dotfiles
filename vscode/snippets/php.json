@@ -28,6 +28,27 @@
     ],
     "description": "Start a new php class"
   },
+  
+  "Open Action class": {
+    "prefix": "act",
+    "body": [
+      "namespace ${1:Namespace};",
+      "",
+      "use Lorisleiva\\Actions\\Concerns\\AsAction;",
+      "",
+      "class ${2:ClassName}",
+      "{",
+      "    use AsAction;",
+      "",
+      "    public function handle(${3:\\$params})",
+      "    {",
+      "        ${4:#handle}",
+      "    }",
+      "}",
+      ""
+    ],
+    "description": "Start a new action class"
+  },
 
   "Open public static function": {
     "prefix": "spubfun",

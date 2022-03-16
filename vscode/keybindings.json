@@ -2,7 +2,8 @@
 [
   {
     "key": "ctrl+l",
-    "command": "workbench.action.focusNextGroup"
+    "command": "workbench.action.focusNextGroup",
+    "when": "editorTextFocus"
   },
   {
     "key": "ctrl+h",
@@ -34,16 +35,6 @@
   {
     "key": "shift+cmd+j",
     "command": "workbench.action.toggleMaximizedPanel"
-  },
-  {
-    "key": "ctrl+h",
-    "command": "workbench.action.terminal.focusPreviousPane",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus"
   },
   {
     "key": "ctrl+k",
@@ -90,5 +81,21 @@
   {
     "key": "ctrl+k shift+w",
     "command": "-vscodeWorkspaceSwitcher.saveWorkspace"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "-vscode-neovim.delete-char-left-cmdline",
+    "when": "neovim.mode == 'cmdline_normal'"
+  },
+  {
+    "key": "escape",
+    "command": "extension.multiCommand.execute",
+    "when": "editorTextFocus && neovim.init && parameterHintsVisible && !markersNavigationVisible && !referenceSearchVisible",
+    "args": { 
+        "sequence": [
+            "vscode-neovim.escape",
+            "closeParameterHints"
+        ]
+    }
   }
 ]

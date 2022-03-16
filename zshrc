@@ -7,7 +7,15 @@ export ZSH_THEME="digitaltoad"
 export EDITOR="vi"
 export ARCHFLAGS='-arch x86_64'
 
-plugins=(tmux vi-mode brew npm mix-fast rake-fast rails rvm ssh-agent projects)
+plugins=(
+  tmux
+  vi-mode
+  brew
+  ssh-agent
+  projects
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
 
 # Uncomment following line if you want to disable colors in ls
 # export DISABLE_LS_COLORS="true"
@@ -23,10 +31,10 @@ export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$HOME/.nodenv/shims:$PATH"
-export PATH="$PATH:/usr/local/opt/flutter/bin"
 export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.composer/bin"
+export PATH=".env/bin:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -72,3 +80,4 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore node_modules --ig
 
 # eval "$(starship init zsh)"
 [[ $TMUX == "" ]] && tmux new-session -A -s sesh
+
