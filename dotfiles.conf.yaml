@@ -1,70 +1,32 @@
+- defaults:
+    link:
+      create: true
+      force: true
+
 - clean: ['~']
 
 - link:
-    ~/.config/nvim:
-      create: true
-      path: nvim
-      force: true
-    ~/.config/kitty:
-      path: kitty
-      force: true
-    ~/.nvimrc:
-      force: true
-      path: nvim/init.vim
-    ~/.zshrc:
-      force: true
-      path: zshrc
-    ~/.oh-my-zsh:
-      path: oh-my-zsh
-      force: true
-    ~/.zsh_custom:
-      force: true
-      path: zsh_custom
-    ~/.tmux.conf:
-      force: true
-      path: tmux.conf
-    ~/.yabairc:
-      force: true
-      path: yabairc
-    ~/.skhdrc:
-      force: true
-      path: skhdrc
-    ~/screen-24bit.terminfo:
-      force: true
-      path: screen-24bit.terminfo
-    ~/.irbrc:
-      force: true
-      path: irbrc
-    ~/.ideavimrc:
-      force: true
-      path: ideavimrc
-    ~/.fzf.zsh:
-      force: true
-      path: fzf.zsh
-    ~/bin/vscode-shell:
-      create: true
-      force: true
-      path: vscode/bin/shell
-    ~/Library/Application\ Support/Code/User/settings.json:
-      create: true
-      force: true
-      path: vscode/settings.json
-    ~/Library/Application\ Support/Code/User/keybindings.json:
-      create: true
-      force: true
-      path: vscode/keybindings.json
-    ~/Library/Application\ Support/Code/User/snippets:
-      create: true
-      force: true
-      path: vscode/snippets
-    ~/bin/do_not_update_spotify:
-      create: true
-      force: true
-      path: do_not_update_spotify
-    ~/bin/forward:
-      create: true
-      force: true
-      path: forward
+    ~/.config/nvim: nvim
+    ~/.config/kitty: kitty
+    ~/.config/lvim/config.lua: lvim.lua
+    ~/.nvimrc: nvim/init.vim
+    ~/.zshrc: zshrc
+    ~/.oh-my-zsh: oh-my-zsh
+    ~/.zsh_custom: zsh_custom
+    ~/.tmux.conf: tmux.conf
+    ~/.tmux.base.conf: tmux.base.conf
+    ~/.yabairc: yabairc
+    ~/.skhdrc: skhdrc
+    ~/screen-24bit.terminfo: screen-24bit.terminfo
+    ~/.irbrc: irbrc
+    ~/.ideavimrc: ideavimrc
+    ~/.fzf.zsh: fzf.zsh
+    ~/Library/Application\ Support/Code/User/settings.json: vscode/settings.json
+    ~/Library/Application\ Support/Code/User/keybindings.json: vscode/keybindings.json
+    ~/Library/Application\ Support/Code/User/snippets: vscode/snippets
+    ~/bin/do_not_update_spotify: do_not_update_spotify
+    ~/bin/forward: forward
+    ~/bin/vscode-shell: vscode-shell
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
